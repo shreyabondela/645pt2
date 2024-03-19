@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="studentSurveyForm">
+        <fieldset>
+            <legend style=>Student Survey Form</legend>
+            <!-- Text Inputs for Personal Information -->
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
+            
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+            
+            <label for="streetAddress">Street Address:</label>
+            <input type="text" id="streetAddress" name="streetAddress" required><br>
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required><br>
+            
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br>
+            
+            <label for="zip">Zip:</label>
+            <input type="text" id="zip" name="zip" required pattern="\d{5}" title="Five digit zip code"><br>
+            
+            <label for="telephone">Telephone Number:</label>
+            <input type="tel" id="telephone" name="telephone" required pattern="\d{10}" title="Ten digit telephone number (numbers only)"><br>
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="dateOfSurvey">Date of Survey:</label>
+            <input type="date" id="dateOfSurvey" name="dateOfSurvey" required><br>
+
+            <!-- Checkboxes -->
+            <fieldset>
+                <legend>What did you like the most about the campus?</legend>
+                <label><input type="checkbox" name="campusPreference" value="students">Students</label><br>
+                <label><input type="checkbox" name="campusPreference" value="location">Location</label><br>
+                <label><input type="checkbox" name="campusPreference" value="campus">Campus</label><br>
+                <label><input type="checkbox" name="campusPreference" value="atmosphere">Atmosphere</label><br>
+                <label><input type="checkbox" name="campusPreference" value="dormRooms">Dorm Rooms</label><br>
+                <label><input type="checkbox" name="campusPreference" value="sports">Sports</label><br>
+            </fieldset>
+
+            <!-- Radio Buttons -->
+            <fieldset>
+                <legend>How did you become interested in the university?</legend>
+                <label><input type="radio" name="interestSource" value="friends" required>Friends</label><br>
+                <label><input type="radio" name="interestSource" value="television">Television</label><br>
+                <label><input type="radio" name="interestSource" value="internet">Internet</label><br>
+                <label><input type="radio" name="interestSource" value="other">Other</label><br>
+            </fieldset>
+
+            <!-- Dropdown List -->
+            <label for="recommendation">Likelihood of recommending this school:</label>
+            <select id="recommendation" name="recommendation" required>
+                <option value="veryLikely">Very Likely</option>
+                <option value="likely">Likely</option>
+                <option value="unlikely">Unlikely</option>
+            </select><br>
+
+            <!-- Raffle Text Box -->
+            <label for="raffle">Raffle (Enter ten comma separated numbers between 1-100):</label>
+            <input type="text" id="raffle" name="raffle" pattern="(\d{1,2},\s?){9}\d{1,2}" title="Enter ten comma separated numbers. Example: 1, 2, 3, ..., 10" required><br>
+
+            <!-- Text Area for Additional Comments -->
+            <label for="additionalComments">Additional Comments:</label>
+            <textarea id="additionalComments" name="additionalComments" rows="4" cols="50"></textarea><br>
+
+            <!-- Submit and Cancel Buttons -->
+            <input type="submit" value="Submit">
+            <input type="button" value="Cancel" onclick="window.location.reload();">
+        </fieldset>
+    </form>
+</body>
+</html>
